@@ -21,10 +21,11 @@ python setup.py build develop
 ```
 2. Link coco dataset path to SparseR-CNN/datasets/coco
 
-2. Train SparseR-CNN
-  ```python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml```
-3. Evaluate SparseR-CNN
-  ```python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml --eval-only MODEL.WEIGHTS path/to/model.pth```
+3. Train SparseR-CNN
+```python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml```
+
+4. Evaluate SparseR-CNN
+```python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml --eval-only MODEL.WEIGHTS path/to/model.pth```
 
 ## License
 
