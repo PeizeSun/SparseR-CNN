@@ -10,7 +10,9 @@ Method | inf_time | box AP | download
 
 
 ## Installation
-1. Install and build Detectron2 libs
+The codebases are built on top of [Detectron2](https://github.com/facebookresearch/detectron2)
+
+1. Install and build libs
 ```
 git clone https://github.com/PeizeSun/SparseR-CNN.git
 cd SparseR-CNN
@@ -22,6 +24,11 @@ python setup.py build develop
   * ```python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.1x.yaml```
 3. Evaluate SparseR-CNN
   * ```python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.1x.yaml --eval-only MODEL.WEIGHTS path/to/model.pth```
+
+## License
+
+SparseR-CNN is released under MIT License.
+
 
 ## Citing
 
