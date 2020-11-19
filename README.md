@@ -4,9 +4,9 @@ End-to-End Object Detection with Learnable Proposal
 ## Models
 Method | inf_time | box AP | download
 --- |:---:|:---:|:---
-[R_50_100proposal_1x](projects/SparseR-CNN/configs/sparsercnn.res50.100proposal.1x.yaml) | 23 FPS | 38.7 | [model](https://drive.google.com/drive/folders/)
-[R_50_100proposal_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100proposal.3x.yaml) | 23 FPS | 42.3 | [model](https://drive.google.com/drive/folders/)
-[R_50_300proposal_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300proposal.3x.yaml) | 22 FPS | 44.5 | [model](https://drive.google.com/drive/folders/)
+[R50_100pro_1x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml) | 23 FPS | 38.7 | [model](https://drive.google.com/drive/folders/)
+[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 42.3 | [model](https://drive.google.com/drive/folders/)
+[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 44.5 | [model](https://drive.google.com/drive/folders/)
 
 
 ## Installation
