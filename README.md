@@ -11,15 +11,15 @@ Method | inf_time | box AP | download
 
 
 ## Installation
-The codebases are built on top of [Detectron2](https://github.com/facebookresearch/detectron2)
+The codebases are built on top of [Detectron2](https://github.com/facebookresearch/detectron2) and [DETR](https://github.com/facebookresearch/detr).
 
-### Requirements
+#### Requirements
 - Linux or macOS with Python ≥ 3.6
 - PyTorch ≥ 1.5 and [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation.
   You can install them together at [pytorch.org](https://pytorch.org) to make sure of this
 - OpenCV is optional and needed by demo and visualization
 
-
+#### Steps
 1. Install and build libs
 ```
 git clone https://github.com/PeizeSun/SparseR-CNN.git
