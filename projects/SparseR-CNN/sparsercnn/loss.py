@@ -68,7 +68,7 @@ class SetCriterion(nn.Module):
             src_logits = src_logits.flatten(0, 1)
             # prepare one_hot target.
             target_classes = target_classes.flatten(0, 1)
-            pos_inds = torch.nonzero(target_classes != self.num_classes).squeeze(1)
+            pos_inds = torch.nonzero(target_classes != self.num_classes, as_tuple=True)[0]
             labels = torch.zeros_like(src_logits)
             labels[pos_inds, target_classes[pos_inds]] = 1
             # comp focal loss.
