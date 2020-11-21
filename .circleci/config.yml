@@ -1,0 +1,225 @@
+version: 2.1
+
+# -------------------------------------------------------------------------------------
+# Environments to run the jobs in
+# -------------------------------------------------------------------------------------
+cpu: &cpu
+  docker:
+    - image: circleci/python:3.6.8-stretch
+      auth:
+        username: $DOCKERHUB_USERNAME
+        password: $DOCKERHUB_TOKEN
+  resource_class: medium
+
+gpu: &gpu
+  machine:
+    image: ubuntu-1604-cuda-10.1:201909-23
+  resource_class: gpu.small
+
+windows-cpu: &windows_cpu
+  machine:
+    resource_class: windows.medium
+    image: windows-server-2019-vs2019:stable
+    shell: powershell.exe
+
+# windows-gpu: &windows_gpu
+#     machine:
+#       resource_class: windows.gpu.nvidia.medium
+#       image: windows-server-2019-nvidia:stable
+
+pytorch_parameters: &pytorch_parameters
+  parameters:
+    pytorch_version:
+      type: string
+      default: "1.7"
+    torchvision_version:
+      type: string
+      default: "0.8"
+
+  environment:
+    PYTORCH_VERSION: << parameters.pytorch_version >>
+    TORCHVISION_VERSION: << parameters.torchvision_version >>
+
+# -------------------------------------------------------------------------------------
+# Re-usable commands
+# -------------------------------------------------------------------------------------
+# install_nvidia_driver: &install_nvidia_driver
+#   - run:
+#       name: Install nvidia driver
+#       working_directory: ~/
+#       command: |
+#         wget -q 'https://s3.amazonaws.com/ossci-linux/nvidia_driver/NVIDIA-Linux-x86_64-430.40.run'
+#         sudo /bin/bash ./NVIDIA-Linux-x86_64-430.40.run -s --no-drm
+#         nvidia-smi
+
+add_ssh_keys: &add_ssh_keys
+  # https://circleci.com/docs/2.0/add-ssh-key/
+  - add_ssh_keys:
+      fingerprints:
+        - "e4:13:f2:22:d4:49:e8:e4:57:5a:ac:20:2f:3f:1f:ca"
+
+install_python: &install_python
+  - run:
+      name: Install Python
+      working_directory: ~/
+      command: |
+        pyenv install -s 3.6.8
+        pyenv global 3.6.8
+        python --version
+        which python
+        pip install --upgrade pip
+
+setup_venv: &setup_venv
+  - run:
+      name: Setup Virtual Env
+      working_directory: ~/
+      command: |
+        python -m venv ~/venv
+        echo ". ~/venv/bin/activate" >> $BASH_ENV
+        . ~/venv/bin/activate
+        python --version
+        which python
+        which pip
+        pip install --upgrade pip
+
+setup_venv_win: &setup_venv_win
+  - run:
+      name: Setup Virutal Env for Windows
+      command: |
+        pip install virtualenv
+        python -m virtualenv env
+        .\env\Scripts\activate
+        python --version
+        which python
+        which pip
+
+install_linux_dep: &install_linux_dep
+  - run:
+      name: Install Dependencies
+      command: |
+        pip install --progress-bar off -U 'git+https://github.com/facebookresearch/fvcore'
+        pip install --progress-bar off ninja opencv-python-headless pytest-xdist tensorboard pycocotools
+        pip install --progress-bar off torch==$PYTORCH_VERSION torchvision==$TORCHVISION_VERSION -f https://download.pytorch.org/whl/torch_stable.html
+        python -c 'import torch; print("CUDA:", torch.cuda.is_available())'
+        gcc --version
+
+install_detectron2: &install_detectron2
+  - run:
+      name: Install Detectron2
+      command: |
+        pip install --progress-bar off -e .[all]
+        python -m detectron2.utils.collect_env
+
+run_unittests: &run_unittests
+  - run:
+      name: Run Unit Tests
+      command: |
+        pytest -n 1 -v tests  # parallel causes some random failures
+
+# -------------------------------------------------------------------------------------
+# Jobs to run
+# -------------------------------------------------------------------------------------
+jobs:
+  linux_cpu_tests:
+    <<: *cpu
+    <<: *pytorch_parameters
+
+    working_directory: ~/detectron2
+
+    steps:
+      - checkout
+      - <<: *setup_venv
+
+      # Cache the venv directory that contains dependencies
+      - restore_cache:
+          keys:
+            - cache-{{ arch }}-<< parameters.pytorch_version >>-{{ .Branch }}-20201027
+
+      - <<: *install_linux_dep
+
+      - save_cache:
+          paths:
+            - ~/venv
+          key: cache-{{ arch }}-<< parameters.pytorch_version >>-{{ .Branch }}-20201027
+
+      - <<: *install_detectron2
+      - <<: *run_unittests
+
+  linux_gpu_tests:
+    <<: *gpu
+    <<: *pytorch_parameters
+
+    working_directory: ~/detectron2
+
+    steps:
+      - checkout
+
+      # Cache the directory that contains python and dependencies
+      - restore_cache:
+          keys:
+            - cache-{{ arch }}-<< parameters.pytorch_version >>-{{ .Branch }}-20201027
+
+      - <<: *install_python
+      - <<: *install_linux_dep
+
+      - save_cache:
+          paths:
+            - /opt/circleci/.pyenv
+          key: cache-{{ arch }}-<< parameters.pytorch_version >>-{{ .Branch }}-20201027
+
+      - <<: *install_detectron2
+      - <<: *run_unittests
+
+  windows_cpu_build:
+    <<: *windows_cpu
+    <<: *pytorch_parameters
+    steps:
+      - <<: *add_ssh_keys
+      - checkout
+      - <<: *setup_venv_win
+
+      # Cache the env directory that contains dependencies
+      - restore_cache:
+          keys:
+            - cache-{{ arch }}-<< parameters.pytorch_version >>-{{ .Branch }}-20201027
+
+      - run:
+          name: Install Dependencies
+          command: |
+            pip install certifi --ignore-installed  # required on windows to workaround some cert issue
+            pip install numpy cython  # required on windows before pycocotools
+            pip install opencv-python-headless pytest-xdist pycocotools tensorboard
+            pip install -U git+https://github.com/facebookresearch/fvcore
+            pip install torch==$env:PYTORCH_VERSION torchvision==$env:TORCHVISION_VERSION -f https://download.pytorch.org/whl/cpu/torch_stable.html
+
+      - save_cache:
+          paths:
+            - env
+          key: cache-{{ arch }}-<< parameters.pytorch_version >>-{{ .Branch }}-20201027
+
+      - <<: *install_detectron2
+      # TODO: unittest fails for now
+
+workflows:
+  version: 2
+  regular_test:
+    jobs:
+      - linux_cpu_tests:
+          name: linux_cpu_tests_pytorch1.7
+          pytorch_version: '1.7+cpu'
+          torchvision_version: '0.8.1+cpu'
+          context:
+            - DOCKERHUB_TOKEN
+      - linux_gpu_tests:
+          name: linux_gpu_tests_pytorch1.5
+          pytorch_version: '1.5+cu101'
+          torchvision_version: '0.6+cu101'
+      - linux_gpu_tests:
+          name: linux_gpu_tests_pytorch1.6
+          pytorch_version: '1.6+cu101'
+          torchvision_version: '0.7+cu101'
+      - linux_gpu_tests:
+          name: linux_gpu_tests_pytorch1.7
+          pytorch_version: '1.7+cu101'
+          torchvision_version: '0.8.1+cu101'
+      - windows_cpu_build
