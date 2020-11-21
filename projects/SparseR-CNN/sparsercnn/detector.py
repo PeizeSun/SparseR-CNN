@@ -199,13 +199,13 @@ class SparseRCNN(nn.Module):
         if self.use_focal:
             scores = torch.sigmoid(box_cls)
             labels = torch.arange(self.num_classes, device=self.device).\
-                     unsqueeze(0).repeat(self.num_queries, 1).flatten(0, 1)
+                     unsqueeze(0).repeat(self.num_proposals, 1).flatten(0, 1)
 
             for i, (scores_per_image, box_pred_per_image, image_size) in enumerate(zip(
                     scores, box_pred, image_sizes
             )):
                 result = Instances(image_size)
-                scores_per_image, topk_indices = scores_per_image.flatten(0, 1).topk(self.num_queries, sorted=False)
+                scores_per_image, topk_indices = scores_per_image.flatten(0, 1).topk(self.num_proposals, sorted=False)
                 labels_per_image = labels[topk_indices]
                 box_pred_per_image = box_pred_per_image.view(-1, 1, 4).repeat(1, self.num_classes, 1).view(-1, 4)
                 box_pred_per_image = box_pred_per_image[topk_indices]
