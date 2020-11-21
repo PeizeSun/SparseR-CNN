@@ -1,0 +1,17 @@
+_BASE_: "../../Base-RCNN-C4.yaml"
+MODEL:
+  WEIGHTS: "models/R-50.pkl"
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+DATASETS:
+  TRAIN: ("coco_2017_val",)
+  TEST: ("coco_2017_val",)
+SOLVER:
+  IMS_PER_BATCH: 2
+  BASE_LR: 0.02
+  STEPS: (60000, 80000)
+  MAX_ITER: 90000
+INPUT:
+  FORMAT: "RGB"
+  # 记得改mean/bias.
