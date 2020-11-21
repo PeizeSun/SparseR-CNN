@@ -3,12 +3,13 @@ Sparse R-CNN is a purely sparse, end-to-end method for object detection.
 ![](readme/fig.jpeg)
 
 ## Models
-Method | inf_time | box AP | download
+Method | inf_time | train_time | box AP | download
 --- |:---:|:---:|:---
-[R50_100pro_1x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml) | 23 FPS | 38.7 | [model](https://drive.google.com/drive/folders/)
-[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 42.3 | [model](https://drive.google.com/drive/folders/)
-[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 44.5 | [model](https://drive.google.com/drive/folders/)
+[R50_100pro_1x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml) | 23 FPS | 6.5h | 38.7 | [model](https://drive.google.com/drive/folders/)
+[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.3 | [model](https://drive.google.com/drive/folders/)
+[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 44.5 | [model](https://drive.google.com/drive/folders/)
 
+Training time is on 8 GPUs with batchsize 16. Inference time is on single GPU. All GPUs are NVIDIA V100. 
 
 ## Installation
 The codebases are built on top of [Detectron2](https://github.com/facebookresearch/detectron2) and [DETR](https://github.com/facebookresearch/detr).
