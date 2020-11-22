@@ -34,12 +34,12 @@ python setup.py build develop
 
 3. Train SparseR-CNN
 ```
-python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml
+python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml
 ```
 
 4. Evaluate SparseR-CNN
 ```
-python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.1x.yaml --eval-only MODEL.WEIGHTS path/to/model.pth
+python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml --eval-only MODEL.WEIGHTS path/to/model.pth
 ```
 
 ## License
