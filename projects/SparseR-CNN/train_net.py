@@ -32,37 +32,6 @@ class Trainer(DefaultTrainer):
 #     Extension of the Trainer class adapted to SparseRCNN.
 #     """
 
-#     def __init__(self, cfg):
-#         """
-#         Args:
-#             cfg (CfgNode):
-#         """
-#         self.clip_norm_val = 0.0
-#         if cfg.SOLVER.CLIP_GRADIENTS.ENABLED:
-#             if cfg.SOLVER.CLIP_GRADIENTS.CLIP_TYPE == "full_model":
-#                 self.clip_norm_val = cfg.SOLVER.CLIP_GRADIENTS.CLIP_VALUE
-#         super().__init__(cfg)
-
-#     def run_step(self):
-#         assert self.model.training, "[Trainer] model was changed to eval mode!"
-#         start = time.perf_counter()
-#         data = next(self._data_loader_iter)
-#         data_time = time.perf_counter() - start
-
-#         loss_dict = self.model(data)
-#         losses = sum(loss_dict.values())
-#         self._detect_anomaly(losses, loss_dict)
-
-#         metrics_dict = loss_dict
-#         metrics_dict["data_time"] = data_time
-#         self._write_metrics(metrics_dict)
-
-#         self.optimizer.zero_grad()
-#         losses.backward()
-#         if self.clip_norm_val > 0.0:
-#             torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.clip_norm_val)
-#         self.optimizer.step()
-
     @classmethod
     def build_evaluator(cls, cfg, dataset_name, output_folder=None):
         """
