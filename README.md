@@ -1,5 +1,4 @@
-# Sparse R-CNN
-Sparse R-CNN is a purely sparse, end-to-end method for object detection.
+# Sparse R-CNN: End-to-End Object Detection with Learnable Proposals
 ![](readme/fig.jpeg)
 
 ## Models
