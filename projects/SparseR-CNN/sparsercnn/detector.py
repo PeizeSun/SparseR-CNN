@@ -183,9 +183,9 @@ class SparseRCNN(nn.Module):
     def inference(self, box_cls, box_pred, image_sizes):
         """
         Arguments:
-            box_cls (Tensor): tensor of shape (batch_size, num_queries, K).
+            box_cls (Tensor): tensor of shape (batch_size, num_proposals, K).
                 The tensor predicts the classification probability for each proposal.
-            box_pred (Tensor): tensors of shape (batch_size, num_queries, 4).
+            box_pred (Tensor): tensors of shape (batch_size, num_proposals, 4).
                 The tensor predicts 4-vector (x,y,w,h) box
                 regression values for every proposal
             image_sizes (List[torch.Size]): the input image sizes
