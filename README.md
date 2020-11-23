@@ -37,7 +37,6 @@ python setup.py build develop
 mkdir -p datasets/coco
 ln -s /path_to_coco_dataset/annotations datasets/coco/annotations
 ln -s /path_to_coco_dataset/train2017 datasets/coco/train2017
-ln -s /path_to_coco_dataset/test2017 datasets/coco/test2017
 ln -s /path_to_coco_dataset/val2017 datasets/coco/val2017
 ```
 
