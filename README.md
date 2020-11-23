@@ -1,4 +1,7 @@
-# Sparse R-CNN
+## Sparse R-CNN:End-to-End Object Detection with Learnable Proposals
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ![](readme/fig.jpeg)
 
 ## Models
@@ -30,15 +33,25 @@ python setup.py build develop
 ```
 
 2. Link coco dataset path to SparseR-CNN/datasets/coco
+```
+mkdir -p datasets/coco
+ln -s /path_to_coco_dataset/annotations datasets/coco/annotations
+ln -s /path_to_coco_dataset/train2017 datasets/coco/train2017
+ln -s /path_to_coco_dataset/test2017 datasets/coco/test2017
+ln -s /path_to_coco_dataset/val2017 datasets/coco/val2017
+```
 
 3. Train SparseR-CNN
 ```
-python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml
+python projects/SparseR-CNN/train_net.py --num-gpus 8 \
+    --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml
 ```
 
 4. Evaluate SparseR-CNN
 ```
-python projects/SparseR-CNN/train_net.py --num-gpus 8 --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml --eval-only MODEL.WEIGHTS path/to/model.pth
+python projects/SparseR-CNN/train_net.py --num-gpus 8 \
+    --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml \
+    --eval-only MODEL.WEIGHTS path/to/model.pth
 ```
 
 ## License
@@ -53,7 +66,7 @@ If you use SparseR-CNN in your research or wish to refer to the baseline results
 ```BibTeX
 
 @article{peize2020sparse,
-  title   =  {{SparseR-CNN}: End-to-End Object Detection with Learnable Proposal},
+  title   =  {{SparseR-CNN}: End-to-End Object Detection with Learnable Proposals},
   author  =  {},
   journal =  {arXiv preprint arXiv:},
   year    =  {2020}
