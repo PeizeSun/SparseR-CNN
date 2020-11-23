@@ -1,4 +1,4 @@
-## Sparse R-CNN:End-to-End Object Detection with Learnable Proposals
+## Sparse R-CNN: End-to-End Object Detection with Learnable Proposals
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
