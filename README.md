@@ -6,12 +6,11 @@
 
 ## Models
 Method | inf_time | train_time | box AP | download
---- |:---:|:---:|:---:|:---
+--- |:---:|:---:|:---:|:---:
 [R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.3 | model is coming.
-[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 44.5 | model is coming.
-More settings are coming.
 
 #### Notes
+- More settings are coming.
 - We observe about 0.3 AP noise.
 - The training time is on 8 GPUs with batchsize 16. The inference time is on single GPU. All GPUs are NVIDIA V100.
 

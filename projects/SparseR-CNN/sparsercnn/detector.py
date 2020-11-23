@@ -55,7 +55,9 @@ class SparseRCNN(nn.Module):
         # Build Proposals.
         self.init_proposal_features = nn.Embedding(self.num_proposals, self.hidden_dim)
         self.init_proposal_boxes = nn.Embedding(self.num_proposals, 4)
-
+        nn.init.constant_(self.init_proposal_boxes.weight[:, :2], 0.5)
+        nn.init.constant_(self.init_proposal_boxes.weight[:, 2:], 1.0)
+        
         # Build Dynamic Head.
         self.head = DynamicHead(cfg=cfg, roi_input_shape=self.backbone.output_shape())
 
@@ -123,8 +125,7 @@ class SparseRCNN(nn.Module):
             features.append(feature)
 
         # Prepare Proposals.
-        init_proposal_boxes = torch.sigmoid(self.init_proposal_boxes.weight)
-        proposal_boxes = init_proposal_boxes.clone()
+        proposal_boxes = self.init_proposal_boxes.weight.clone()
         proposal_boxes = box_cxcywh_to_xyxy(proposal_boxes)
         proposal_boxes = proposal_boxes[None] * images_whwh[:, None, :]
 
