@@ -4,6 +4,9 @@
 
 ![](readme/fig.jpeg)
 
+## Paper
+[Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://msc.berkeley.edu/research/autonomous-vehicle/sparse_rcnn.pdf)
+
 ## Models
 Method | inf_time | train_time | box AP | download
 --- |:---:|:---:|:---:|:---:
