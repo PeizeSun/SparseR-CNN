@@ -68,7 +68,7 @@ If you use SparseR-CNN in your research or wish to refer to the baseline results
 
 @article{peize2020sparse,
   title   =  {{SparseR-CNN}: End-to-End Object Detection with Learnable Proposals},
-  author  =  {},
+  author  =  {Peize Sun, Rufeng Zhang, Yi Jiang, Tao Kong, Chenfeng Xu, Wei Zhan, Masayoshi Tomizuka, Lei Li, Zehuan Yuan, Changhu Wang, Ping Luo},
   journal =  {arXiv preprint arXiv:},
   year    =  {2020}
 }
