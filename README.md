@@ -7,20 +7,20 @@
 ## Paper
 [Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://arxiv.org/abs/2011.12450)
 
+## Updates
+- Models and logs(R50_100pro_3x and R50_300pro_3x) are available Now. (26/11/2021)
+- Higher Performance for Sparse R-CNN is reported by setting the dropout rate as 0.0. (26/11/2021)
+
 ## Models
 Method | inf_time | train_time | box AP | download
 --- |:---:|:---:|:---:|:---:
-[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | model is coming.
-[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | model is coming.
+[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | [model](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR) [log](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR)[log]
+[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [model](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR) [log](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR)[log].
 
 #### Notes
 - More settings are coming.
 - We observe about 0.3 AP noise.
 - The training time is on 8 GPUs with batchsize 16. The inference time is on single GPU. All GPUs are NVIDIA V100.
-
-#### Updates
-- Pretrained coco models and logs(R50_100pro_3x and R50_300pro_3x) are available Now.
-- Higher Performance for Sparse R-CNN is reported by setting the dropout rate as 0.0
 
 
 ## Installation
