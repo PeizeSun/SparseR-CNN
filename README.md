@@ -8,8 +8,8 @@
 [Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://arxiv.org/abs/2011.12450)
 
 ## Updates
-- Models and logs(R50_100pro_3x and R50_300pro_3x) are available Now. (26/11/2021)
-- Higher Performance for Sparse R-CNN is reported by setting the dropout rate as 0.0. (26/11/2021)
+- Models and logs(R50_100pro_3x and R50_300pro_3x) are available Now. (26/11/2020)
+- Higher Performance for Sparse R-CNN is reported by setting the dropout rate as 0.0. (26/11/2020)
 
 ## Models
 Method | inf_time | train_time | box AP | download
