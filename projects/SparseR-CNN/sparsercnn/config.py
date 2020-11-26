@@ -17,7 +17,7 @@ def add_sparsercnn_config(cfg):
 
     # RCNN Head.
     cfg.MODEL.SparseRCNN.NHEADS = 8
-    cfg.MODEL.SparseRCNN.DROPOUT = 0.1
+    cfg.MODEL.SparseRCNN.DROPOUT = 0.0
     cfg.MODEL.SparseRCNN.DIM_FEEDFORWARD = 2048
     cfg.MODEL.SparseRCNN.ACTIVATION = 'relu'
     cfg.MODEL.SparseRCNN.HIDDEN_DIM = 256
@@ -35,13 +35,13 @@ def add_sparsercnn_config(cfg):
     cfg.MODEL.SparseRCNN.L1_WEIGHT = 5.0
     cfg.MODEL.SparseRCNN.DEEP_SUPERVISION = True
     cfg.MODEL.SparseRCNN.NO_OBJECT_WEIGHT = 0.1
-    
+
     # Focal Loss.
     cfg.MODEL.SparseRCNN.USE_FOCAL = True
     cfg.MODEL.SparseRCNN.ALPHA = 0.25
     cfg.MODEL.SparseRCNN.GAMMA = 2.0
     cfg.MODEL.SparseRCNN.PRIOR_PROB = 0.01
-    
-    # Optimizer.    
+
+    # Optimizer.
     cfg.SOLVER.OPTIMIZER = "ADAMW"
     cfg.SOLVER.BACKBONE_MULTIPLIER = 1.0
