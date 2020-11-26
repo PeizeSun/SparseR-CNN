@@ -10,12 +10,18 @@
 ## Models
 Method | inf_time | train_time | box AP | download
 --- |:---:|:---:|:---:|:---:
-[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.3 | model is coming.
+[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | model is coming.
+[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | model is coming.
 
 #### Notes
 - More settings are coming.
 - We observe about 0.3 AP noise.
 - The training time is on 8 GPUs with batchsize 16. The inference time is on single GPU. All GPUs are NVIDIA V100.
+
+#### Updates
+- Pretrained coco models and logs(R50_100pro_3x and R50_300pro_3x) are available Now.
+- Higher Performance for Sparse R-CNN is reported by setting the dropout rate as 0.0
+
 
 ## Installation
 The codebases are built on top of [Detectron2](https://github.com/facebookresearch/detectron2) and [DETR](https://github.com/facebookresearch/detr).
@@ -68,7 +74,7 @@ If you use SparseR-CNN in your research or wish to refer to the baseline results
 
 @article{peize2020sparse,
   title   =  {{SparseR-CNN}: End-to-End Object Detection with Learnable Proposals},
-  author  =  {Peize Sun and Rufeng Zhang and Yi Jiang and Tao Kong and Chenfeng Xu and Wei Zhan and Masayoshi Tomizuka and Lei Li and Zehuan Yuan and Changhu Wang and Ping Luo},
+  author  =  {Peize Sun, Rufeng Zhang, Yi Jiang, Tao Kong, Chenfeng Xu, Wei Zhan, Masayoshi Tomizuka, Lei Li, Zehuan Yuan, Changhu Wang, Ping Luo},
   journal =  {arXiv preprint arXiv:2011.12450},
   year    =  {2020}
 }
