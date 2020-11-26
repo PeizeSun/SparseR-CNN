@@ -14,8 +14,8 @@
 ## Models
 Method | inf_time | train_time | box AP | download
 --- |:---:|:---:|:---:|:---:
-[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | [model](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR) [log](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR)[log]
-[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [model](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR) [log](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR)[log].
+[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | [model](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR) \| [log](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR)
+[R50_300pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [model](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR) \| [log](https://drive.google.com/drive/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR)
 
 #### Notes
 - More settings are coming.
