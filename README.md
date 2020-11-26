@@ -5,7 +5,7 @@
 ![](readme/fig.jpeg)
 
 ## Paper
-[Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://msc.berkeley.edu/research/autonomous-vehicle/sparse_rcnn.pdf)
+[Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://arxiv.org/abs/2011.12450)
 
 ## Models
 Method | inf_time | train_time | box AP | download
@@ -69,7 +69,7 @@ If you use SparseR-CNN in your research or wish to refer to the baseline results
 @article{peize2020sparse,
   title   =  {{SparseR-CNN}: End-to-End Object Detection with Learnable Proposals},
   author  =  {Peize Sun, Rufeng Zhang, Yi Jiang, Tao Kong, Chenfeng Xu, Wei Zhan, Masayoshi Tomizuka, Lei Li, Zehuan Yuan, Changhu Wang, Ping Luo},
-  journal =  {arXiv preprint arXiv:},
+  journal =  {arXiv preprint arXiv:2011.12450},
   year    =  {2020}
 }
 
