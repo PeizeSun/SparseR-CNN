@@ -9,18 +9,23 @@ SparseRCNN Training Script.
 This script is a simplified version of the training script in detectron2/tools.
 """
 
-import os
 import itertools
+import os
 import time
 from typing import Any, Dict, List, Set
-
 import torch
 
 import detectron2.utils.comm as comm
 from detectron2.checkpoint import DetectionCheckpointer
 from detectron2.config import get_cfg
 from detectron2.data import MetadataCatalog, build_detection_train_loader
-from detectron2.engine import AutogradProfiler, DefaultTrainer, default_argument_parser, default_setup, launch
+from detectron2.engine import (
+    AutogradProfiler,
+    DefaultTrainer,
+    default_argument_parser,
+    default_setup,
+    launch,
+)
 from detectron2.evaluation import COCOEvaluator, verify_results
 from detectron2.solver.build import maybe_add_gradient_clipping
 
@@ -28,9 +33,9 @@ from sparsercnn import SparseRCNNDatasetMapper, add_sparsercnn_config
 
 
 class Trainer(DefaultTrainer):
-#     """
-#     Extension of the Trainer class adapted to SparseRCNN.
-#     """
+    #     """
+    #     Extension of the Trainer class adapted to SparseRCNN.
+    #     """
 
     @classmethod
     def build_evaluator(cls, cfg, dataset_name, output_folder=None):
@@ -117,7 +122,9 @@ def main(args):
 
     if args.eval_only:
         model = Trainer.build_model(cfg)
-        DetectionCheckpointer(model, save_dir=cfg.OUTPUT_DIR).resume_or_load(cfg.MODEL.WEIGHTS, resume=args.resume)
+        DetectionCheckpointer(model, save_dir=cfg.OUTPUT_DIR).resume_or_load(
+            cfg.MODEL.WEIGHTS, resume=args.resume
+        )
         res = Trainer.test(cfg, model)
         if comm.is_main_process():
             verify_results(cfg, res)

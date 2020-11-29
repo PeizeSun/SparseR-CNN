@@ -19,7 +19,7 @@ def add_sparsercnn_config(cfg):
     cfg.MODEL.SparseRCNN.NHEADS = 8
     cfg.MODEL.SparseRCNN.DROPOUT = 0.0
     cfg.MODEL.SparseRCNN.DIM_FEEDFORWARD = 2048
-    cfg.MODEL.SparseRCNN.ACTIVATION = 'relu'
+    cfg.MODEL.SparseRCNN.ACTIVATION = "relu"
     cfg.MODEL.SparseRCNN.HIDDEN_DIM = 256
     cfg.MODEL.SparseRCNN.NUM_CLS = 1
     cfg.MODEL.SparseRCNN.NUM_REG = 3

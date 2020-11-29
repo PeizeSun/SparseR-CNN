@@ -10,8 +10,9 @@ import tqdm
 from detectron2.config import get_cfg
 from detectron2.data.detection_utils import read_image
 from detectron2.utils.logger import setup_logger
-from sparsercnn import add_sparsercnn_config
+
 from predictor import VisualizationDemo
+from sparsercnn import add_sparsercnn_config
 
 # constants
 WINDOW_NAME = "COCO detections"
@@ -147,7 +148,9 @@ if __name__ == "__main__":
                 isColor=True,
             )
         assert os.path.isfile(args.video_input)
-        for vis_frame in tqdm.tqdm(demo.run_on_video(video, args.confidence_threshold), total=num_frames):
+        for vis_frame in tqdm.tqdm(
+            demo.run_on_video(video, args.confidence_threshold), total=num_frames
+        ):
             if args.output:
                 output_file.write(vis_frame)
             else:

@@ -143,7 +143,7 @@ class ROIHeads(torch.nn.Module):
         batch_size_per_image,
         positive_fraction,
         proposal_matcher,
-        proposal_append_gt=True
+        proposal_append_gt=True,
     ):
         """
         NOTE: this interface is experimental.
@@ -501,7 +501,7 @@ class StandardROIHeads(ROIHeads):
         keypoint_pooler: Optional[ROIPooler] = None,
         keypoint_head: Optional[nn.Module] = None,
         train_on_pred_boxes: bool = False,
-        **kwargs
+        **kwargs,
     ):
         """
         NOTE: this interface is experimental.
