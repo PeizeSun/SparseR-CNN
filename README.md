@@ -61,6 +61,14 @@ python projects/SparseRCNN/train_net.py --num-gpus 8 \
     --eval-only MODEL.WEIGHTS path/to/model.pth
 ```
 
+5. Visualize SparseR-CNN
+```    
+python demo/demo.py\
+    --config-file projects/SparseRCNN/configs/sparsercnn.res50.100pro.3x.yaml \
+    --input path/to/images --output path/to/save_images --confidence-threshold 0.4 \
+    --opts MODEL.WEIGHTS path/to/model.pth
+```
+
 ## License
 
 SparseR-CNN is released under MIT License.
