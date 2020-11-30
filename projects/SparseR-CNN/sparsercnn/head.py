@@ -171,7 +171,7 @@ class RCNNHead(nn.Module):
     def forward(self, features, bboxes, pro_features, pooler):
         """
         :param bboxes: (N, nr_boxes, 4)
-        :param pro_features: (nr_boxes, N, d_model)
+        :param pro_features: (N, nr_boxes, d_model)
         """
 
         N, nr_boxes = bboxes.shape[:2]
