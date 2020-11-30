@@ -14,8 +14,8 @@
 ## Models
 Method | inf_time | train_time | box AP | download
 --- |:---:|:---:|:---:|:---:
-[R50_100pro_3x](projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
-[R50_300pro_3x](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) | 22 FPS | 24h  | 45.0 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
+[R50_100pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
+[R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
 
 #### Notes
 - More settings are coming.
@@ -50,14 +50,14 @@ ln -s /path_to_coco_dataset/val2017 datasets/coco/val2017
 
 3. Train SparseR-CNN
 ```
-python projects/SparseR-CNN/train_net.py --num-gpus 8 \
-    --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml
+python projects/SparseRCNN/train_net.py --num-gpus 8 \
+    --config-file projects/SparseRCNN/configs/sparsercnn.res50.100pro.3x.yaml
 ```
 
 4. Evaluate SparseR-CNN
 ```
-python projects/SparseR-CNN/train_net.py --num-gpus 8 \
-    --config-file projects/SparseR-CNN/configs/sparsercnn.res50.100pro.3x.yaml \
+python projects/SparseRCNN/train_net.py --num-gpus 8 \
+    --config-file projects/SparseRCNN/configs/sparsercnn.res50.100pro.3x.yaml \
     --eval-only MODEL.WEIGHTS path/to/model.pth
 ```
 
