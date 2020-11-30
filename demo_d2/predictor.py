@@ -34,7 +34,7 @@ class VisualizationDemo(object):
         else:
             self.predictor = DefaultPredictor(cfg)
 
-    def run_on_image(self, image, confidence_threshold):
+    def run_on_image(self, image):
         """
         Args:
             image (np.ndarray): an image of shape (H, W, C) (in BGR order).
@@ -61,8 +61,6 @@ class VisualizationDemo(object):
                 )
             if "instances" in predictions:
                 instances = predictions["instances"].to(self.cpu_device)
-                instances = instances[instances.scores > confidence_threshold]
-                predictions["instances"] = instances
                 vis_output = visualizer.draw_instance_predictions(predictions=instances)
 
         return predictions, vis_output
@@ -75,7 +73,7 @@ class VisualizationDemo(object):
             else:
                 break
 
-    def run_on_video(self, video, confidence_threshold):
+    def run_on_video(self, video):
         """
         Visualizes predictions on frames of the input video.
 
@@ -97,7 +95,6 @@ class VisualizationDemo(object):
                 )
             elif "instances" in predictions:
                 predictions = predictions["instances"].to(self.cpu_device)
-                predictions = predictions[predictions.scores > confidence_threshold]
                 vis_frame = video_visualizer.draw_instance_predictions(frame, predictions)
             elif "sem_seg" in predictions:
                 vis_frame = video_visualizer.draw_sem_seg(
