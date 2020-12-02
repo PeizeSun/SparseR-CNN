@@ -23,7 +23,7 @@ Method | inf_time | train_time | box AP | download
 #### Notes
 - We observe about 0.3 AP noise.
 - The training time is on 8 GPUs with batchsize 16. The inference time is on single GPU. All GPUs are NVIDIA V100.
-- We use the models pre-trained on imagenet using torchvision. And we provide [torchvision's ResNet-101](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) model. 
+- We use the models pre-trained on imagenet using torchvision. And we provide [torchvision's ResNet-101.pkl](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) model. 
 More details can be found in [the conversion script](tools/convert-torchvision-to-d2.py).
 
 
