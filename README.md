@@ -20,6 +20,8 @@ Method | inf_time | train_time | box AP | download
 [R101_100pro_3x](projects/SparseRCNN/configs/sparsercnn.res101.100pro.3x.yaml) | 19 FPS | 25h  | 44.1 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
 [R101_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res101.300pro.3x.yaml) | 18 FPS | 29h  | 46.4 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
 
+Models and logs are available in [Baidu Drive](https://pan.baidu.com/s/1v1g5JKPmn0rqiGGAvYHYvw) by code wt9n.
+
 #### Notes
 - We observe about 0.3 AP noise.
 - The training time is on 8 GPUs with batchsize 16. The inference time is on single GPU. All GPUs are NVIDIA V100.
