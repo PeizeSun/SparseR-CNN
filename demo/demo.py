@@ -85,7 +85,9 @@ if __name__ == "__main__":
             assert args.input, "The input path(s) was not found"
         for path in tqdm.tqdm(args.input, disable=not args.output):
             # use PIL, to be consistent with evaluation
-            img = read_image(path, format="BGR")
+#             img = read_image(path, format="BGR")
+            # SparseRCNN uses RGB input as default 
+            img = read_image(path, format="RGB")
             start_time = time.time()
             predictions, visualized_output = demo.run_on_image(img, args.confidence_threshold)
             logger.info(
