@@ -225,8 +225,6 @@ class SparseRCNN(nn.Module):
             )):
                 result = Instances(image_size)
                 result.pred_boxes = Boxes(box_pred_per_image)
-                result.pred_boxes.scale(scale_x=image_size[1], scale_y=image_size[0])
-
                 result.scores = scores_per_image
                 result.pred_classes = labels_per_image
                 results.append(result)
