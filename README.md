@@ -74,6 +74,9 @@ python demo/demo.py\
     --input path/to/images --output path/to/save_images --confidence-threshold 0.4 \
     --opts MODEL.WEIGHTS path/to/model.pth
 ```
+## Third-party resources
+- mmdetection implementation: [sparse_rcnn](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn). Thank [Shilong Zhang](https://github.com/jshilong)!
+
 
 ## License
 
