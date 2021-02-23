@@ -1,6 +1,6 @@
 _BASE_: "Base-SparseRCNN.yaml"
 MODEL:
-  WEIGHTS: "detco/r50.pkl"
+  WEIGHTS: "detco_AA.pkl"
   BACKBONE:
     FREEZE_AT: 0
   RESNETS:
