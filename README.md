@@ -15,19 +15,18 @@
 - (26/11/2020) Higher Performance for Sparse R-CNN is reported by setting the dropout rate as 0.0. 
 
 ## Models
-Method | inf_time | train_time | box AP | download
---- |:---:|:---:|:---:|:---:
-[R50_100pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
-[R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
-[R50_300pro_3x.detco](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.detco.yaml) | 22 FPS | 28h  | 46.5 | coming soon
-[R101_100pro_3x](projects/SparseRCNN/configs/sparsercnn.res101.100pro.3x.yaml) | 19 FPS | 25h  | 44.1 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
-[R101_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res101.300pro.3x.yaml) | 18 FPS | 29h  | 46.4 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
-
 Method | inf_time | train_time | box AP 
 --- |:---:|:---:|:---:
 [R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 
 [R50_300pro_3x.detco](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.detco.yaml) | 22 FPS | 28h  | 46.5 
 [PVT_300pro_3x](https://github.com/whai362/PVT) | 13 FPS | 50h  | 45.7 
+
+Method | inf_time | train_time | box AP | download
+--- |:---:|:---:|:---:|:---:
+[R50_100pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
+[R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
+[R101_100pro_3x](projects/SparseRCNN/configs/sparsercnn.res101.100pro.3x.yaml) | 19 FPS | 25h  | 44.1 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
+[R101_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res101.300pro.3x.yaml) | 18 FPS | 29h  | 46.4 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
 
 Models and logs are available in [Baidu Drive](https://pan.baidu.com/s/1v1g5JKPmn0rqiGGAvYHYvw) by code wt9n.
 
