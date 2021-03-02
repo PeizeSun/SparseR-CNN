@@ -15,7 +15,7 @@
 - (26/11/2020) Higher performance for Sparse R-CNN is reported by setting the dropout rate as 0.0. 
 
 ## Models
-Method | inf_time | train_time | box AP ｜ codebase
+Method | inf_time | train_time | box AP | codebase
 --- |:---:|:---:|:---:|:---:
 [R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 ｜ [detectron2](https://github.com/facebookresearch/detectron2)
 [R50_300pro_3x.detco](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.detco.yaml) | 22 FPS | 28h  | 46.5 ｜ [detectron2](https://github.com/facebookresearch/detectron2)
