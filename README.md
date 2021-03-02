@@ -8,18 +8,18 @@
 [Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://arxiv.org/abs/2011.12450)
 
 ## Updates
-- (02/03/2021) Higher Performance is reported by using stronger backbone model [PVT](https://github.com/whai362/PVT). 
-- (23/02/2021) Higher Performance is reported by using stronger pretrain model [DetCo](https://github.com/xieenze/DetCo). 
+- (02/03/2021) Higher performance is reported by using stronger backbone model [PVT](https://github.com/whai362/PVT). 
+- (23/02/2021) Higher performance is reported by using stronger pretrain model [DetCo](https://github.com/xieenze/DetCo). 
 - (02/12/2020) Models and logs(R101_100pro_3x and R101_300pro_3x) are available. 
 - (26/11/2020) Models and logs(R50_100pro_3x and R50_300pro_3x) are available.
-- (26/11/2020) Higher Performance for Sparse R-CNN is reported by setting the dropout rate as 0.0. 
+- (26/11/2020) Higher performance for Sparse R-CNN is reported by setting the dropout rate as 0.0. 
 
 ## Models
 Method | inf_time | train_time | box AP 
 --- |:---:|:---:|:---:
 [R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 
 [R50_300pro_3x.detco](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.detco.yaml) | 22 FPS | 28h  | 46.5 
-[PVT_300pro_3x](https://github.com/whai362/PVT) | 13 FPS | 50h  | 45.7 
+[PVTSmall_300pro_3x](https://github.com/whai362/PVT) | 13 FPS | 50h  | 45.7 
 
 Method | inf_time | train_time | box AP | download
 --- |:---:|:---:|:---:|:---:
