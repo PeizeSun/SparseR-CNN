@@ -5,7 +5,7 @@
 ![](readme/fig.jpeg)
 
 ## Paper
-[Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://arxiv.org/abs/2011.12450)
+(CVPR2021)[Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://arxiv.org/abs/2011.12450)
 
 ## Updates
 - (02/03/2021) Higher performance is reported by using stronger backbone model [PVT](https://github.com/whai362/PVT). 
