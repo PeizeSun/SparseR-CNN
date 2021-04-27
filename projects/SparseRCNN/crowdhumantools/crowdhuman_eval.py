@@ -6,7 +6,7 @@
 
 import json
 import os
-
+import argparse
 import numpy as np
 
 PERSON_CLASSES = ['background', 'person']
@@ -474,11 +474,11 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
     parser.add_argument('--result', default='output_crowdhuman/inference/coco_instances_results.json', type=str)
-    parser.add_argument('--gt', default='datasets/crowdhuman/annotations/CrowdHumanVal.json', type=str)
+    parser.add_argument('--gt', default='datasets/crowdhuman/annotations/val.json', type=str)
     args = parser.parse_args()    
     
-    dt_path = "projects/SparseRCNN/crowdhumantools/results.odgt"
-    gt_path = 'projects/SparseRCNN/crowdhumantools/annotation_val.odgt'
+    dt_path = "output_crowdhuman/results.odgt"
+    gt_path = 'output_crowdhuman/annotation_val.odgt'
     
     # ########################
     #  predictions

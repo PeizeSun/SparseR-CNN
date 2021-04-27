@@ -1,4 +1,4 @@
-## Evalution on CrowdHuman
+## Evaluation on CrowdHuman
 The evalution code is built on top of [cvpods](https://github.com/Megvii-BaseDetection/cvpods).
 
 
@@ -25,5 +25,8 @@ python projects/SparseRCNN/train_net.py --num-gpus 8 \
     --eval-only MODEL.WEIGHTS path/to/model.pth
 python projects/SparseRCNN/crowdhumantools/crowdhuman_eval.py \
     --result output_crowdhuman/inference/coco_instances_results.json \
-    --gt datasets/crowdhuman/annotations/CrowdHumanVal.json
+    --gt datasets/crowdhuman/annotations/val.json
 ```
+
+#### Notes
+- The default evaluation code in training should be ignored, since it only consider at most 100 objects in one image, while crowdhuman image contains more than 100.

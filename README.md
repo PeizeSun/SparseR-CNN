@@ -15,12 +15,6 @@
 - (26/11/2020) Higher performance for Sparse R-CNN is reported by setting the dropout rate as 0.0. 
 
 ## Models
-Method | inf_time | train_time | box AP | codebase
---- |:---:|:---:|:---:|:---:
-[R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [detectron2](https://github.com/facebookresearch/detectron2)
-[R50_300pro_3x.detco](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.detco.yaml) | 22 FPS | 28h  | 46.5 | [detectron2](https://github.com/facebookresearch/detectron2)
-[PVTSmall_300pro_3x](https://github.com/whai362/PVT) | 13 FPS | 50h  | 45.7 | [mmdetection](https://github.com/open-mmlab/mmdetection)
-
 Method | inf_time | train_time | box AP | download
 --- |:---:|:---:|:---:|:---:
 [R50_100pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.100pro.3x.yaml) | 23 FPS | 19h  | 42.8 | [model](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) \| [log](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__)
@@ -35,6 +29,13 @@ Models and logs are available in [Baidu Drive](https://pan.baidu.com/s/1v1g5JKPm
 - The training time is on 8 GPUs with batchsize 16. The inference time is on single GPU. All GPUs are NVIDIA V100.
 - We use the models pre-trained on imagenet using torchvision. And we provide [torchvision's ResNet-101.pkl](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) model. 
 More details can be found in [the conversion script](tools/convert-torchvision-to-d2.py).
+
+
+Method | inf_time | train_time | box AP | codebase
+--- |:---:|:---:|:---:|:---:
+[R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [detectron2](https://github.com/facebookresearch/detectron2)
+[R50_300pro_3x.detco](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.detco.yaml) | 22 FPS | 28h  | 46.5 | [detectron2](https://github.com/facebookresearch/detectron2)
+[PVTSmall_300pro_3x](https://github.com/whai362/PVT) | 13 FPS | 50h  | 45.7 | [mmdetection](https://github.com/open-mmlab/mmdetection)
 
 
 ## Installation
