@@ -29,4 +29,4 @@ python projects/SparseRCNN/crowdhumantools/crowdhuman_eval.py \
 ```
 
 #### Notes
-- The default evaluation code in training should be ignored, since it only consider at most 100 objects in one image, while crowdhuman image contains more than 100.
+- The default evaluation code in training should be ignored, since it only considers at most 100 objects in one image, while crowdhuman image contains more than 100.
