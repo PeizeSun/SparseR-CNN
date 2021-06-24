@@ -36,6 +36,7 @@ Method | inf_time | train_time | box AP | codebase
 [R50_300pro_3x](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.yaml) | 22 FPS | 24h  | 45.0 | [detectron2](https://github.com/facebookresearch/detectron2)
 [R50_300pro_3x.detco](projects/SparseRCNN/configs/sparsercnn.res50.300pro.3x.detco.yaml) | 22 FPS | 28h  | 46.5 | [detectron2](https://github.com/facebookresearch/detectron2)
 [PVTSmall_300pro_3x](https://github.com/whai362/PVT) | 13 FPS | 50h  | 45.7 | [mmdetection](https://github.com/open-mmlab/mmdetection)
+[PVTv2-b2](https://github.com/whai362/PVT/blob/v2/detection/configs/sparse_rcnn_pvt_v2_b2_fpn_300_proposals_crop_mstrain_480-800_3x_coco.py) | | | 50.1 | [mmdetection](https://github.com/open-mmlab/mmdetection)
 
 
 ## Installation
