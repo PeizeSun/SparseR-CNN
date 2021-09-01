@@ -87,7 +87,7 @@ python demo/demo.py\
 ## Third-party resources
 - mmdetection implementation: [sparse_rcnn](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn). Thank [Shilong Zhang](https://github.com/jshilong)!
 - cvpod implementation:[sparse_rcnn](https://github.com/Megvii-BaseDetection/cvpods/tree/0927bdcf8d0ae62e8f8d39ba808fa072ee793034/playground/detection/coco/sparse_rcnn). Thank [Benjin Zhu](https://github.com/poodarchu)!
-
+- paddledetection implementation:[sparse_rcnn](https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.2/configs/sparse_rcnn). Thank [FL77N](https://github.com/FL77N/)!
 
 ## License
 
