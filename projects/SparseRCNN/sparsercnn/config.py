@@ -45,3 +45,15 @@ def add_sparsercnn_config(cfg):
     # Optimizer.
     cfg.SOLVER.OPTIMIZER = "ADAMW"
     cfg.SOLVER.BACKBONE_MULTIPLIER = 1.0
+
+    # TTA.
+    cfg.TEST.AUG.MIN_SIZES = (400, 500, 600, 640, 700, 900, 1000, 1100, 1200, 1300, 1400, 1800, 800)
+    cfg.TEST.AUG.CVPODS_TTA = True
+    cfg.TEST.AUG.SCALE_FILTER = True
+    cfg.TEST.AUG.SCALE_RANGES = ([96, 10000], [96, 10000], 
+                                 [64, 10000], [64, 10000],
+                                 [64, 10000], [0, 10000],
+                                 [0, 10000], [0, 256],
+                                 [0, 256], [0, 192],
+                                 [0, 192], [0, 96],
+                                 [0, 10000])

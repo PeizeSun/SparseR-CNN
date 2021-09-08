@@ -98,7 +98,7 @@ class SparseRCNN(nn.Module):
         self.to(self.device)
 
 
-    def forward(self, batched_inputs):
+    def forward(self, batched_inputs, do_postprocess=True):
         """
         Args:
             batched_inputs: a list, batched outputs of :class:`DatasetMapper` .
@@ -151,15 +151,18 @@ class SparseRCNN(nn.Module):
             box_cls = output["pred_logits"]
             box_pred = output["pred_boxes"]
             results = self.inference(box_cls, box_pred, images.image_sizes)
-
-            processed_results = []
-            for results_per_image, input_per_image, image_size in zip(results, batched_inputs, images.image_sizes):
-                height = input_per_image.get("height", image_size[0])
-                width = input_per_image.get("width", image_size[1])
-                r = detector_postprocess(results_per_image, height, width)
-                processed_results.append({"instances": r})
             
-            return processed_results
+            if do_postprocess:
+                processed_results = []
+                for results_per_image, input_per_image, image_size in zip(results, batched_inputs, images.image_sizes):
+                    height = input_per_image.get("height", image_size[0])
+                    width = input_per_image.get("width", image_size[1])
+                    r = detector_postprocess(results_per_image, height, width)
+                    processed_results.append({"instances": r})
+                return processed_results
+            else:
+                return results
+            
 
     def prepare_targets(self, targets):
         new_targets = []

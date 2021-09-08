@@ -6,3 +6,4 @@
 from .config import add_sparsercnn_config
 from .detector import SparseRCNN
 from .dataset_mapper import SparseRCNNDatasetMapper
+from .test_time_augmentation import SparseRCNNWithTTA
