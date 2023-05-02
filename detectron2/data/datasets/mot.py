@@ -521,7 +521,7 @@ if __name__ == "__main__":
     #assert sys.argv[3] in DatasetCatalog.list()
     # meta = MetadataCatalog.get(sys.argv[3])
 
-    dicts = load_crowdhuman_json(sys.argv[1], sys.argv[2], sys.argv[3])
+    dicts = load_crowdhuman_json(*sys.argv[1:4:1])
     logger.info("Done loading {} samples.".format(len(dicts)))
 
     dirname = "coco-data-vis"
